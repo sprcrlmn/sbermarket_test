@@ -10,7 +10,7 @@ import web.core.BasePage;
 
 @Getter
 public class MaxReviewPhonePage extends BasePage {
-
+    Actions actions = new Actions(driver);
     private static MaxReviewPhonePage instance;
 
     private MaxReviewPhonePage(WebDriver webDriver) {
@@ -22,10 +22,8 @@ public class MaxReviewPhonePage extends BasePage {
             instance = new MaxReviewPhonePage(webDriver);
         return instance;
     }
-    Actions actions = new Actions(driver);
 
     @FindBy(xpath = "//div[@class = 'pdp-sales-block__button']")
     private WebElement buyButton;
-
 
 }

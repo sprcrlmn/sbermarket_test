@@ -5,15 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import web.core.BasePage;
 import org.openqa.selenium.interactions.Actions;
-import web.webData.constants.Waiting;
-
-import java.time.Duration;
-
-import static web.webData.constants.Waiting.EXPLICIT_WAIT;
-import static web.webData.constants.Waiting.IMPLICIT_WAIT;
 
 @Getter
 public class MainPage extends BasePage {

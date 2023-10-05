@@ -22,19 +22,16 @@ public class webTest extends BaseTest {
         mobilePhonePage.sendKeyToPrice();
         mobilePhonePage.clickOnAndroidCheckBox();
         try {
-            Thread.sleep(8000); // Приостановить выполнение на 2 секунды
+            Thread.sleep(8000);
         } catch (InterruptedException e) {
-            // Обработка исключения, если поток был прерван
         }
         System.out.println(mobilePhonePage.maxReview());
         mobilePhonePage.clickOnMaxReviewPhone();
         try {
-            Thread.sleep(5000); // Приостановить выполнение на 2 секунды
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
-            // Обработка исключения, если поток был прерван
         }
         MaxReviewPhonePage maxReviewPhonePage = MaxReviewPhonePage.getInstance(driver);
-
         maxReviewPhonePage.getBuyButton().isDisplayed();
         maxReviewPhonePage.getBuyButton().isEnabled();
     }

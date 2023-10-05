@@ -6,7 +6,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import web.core.BasePage;
@@ -17,7 +16,8 @@ import java.util.stream.Collectors;
 
 @Getter
 public class MobilePhonePage extends BasePage {
-
+    Actions actions = new Actions(driver);
+    private int maxReview;
     private static MobilePhonePage instance;
 
     private MobilePhonePage(WebDriver webDriver) {
@@ -29,8 +29,6 @@ public class MobilePhonePage extends BasePage {
             instance = new MobilePhonePage(webDriver);
         return instance;
     }
-    Actions actions = new Actions(driver);
-    private int maxReview;
 
     @FindBy(xpath = "//div[contains(text(), 'Цена')]/following-sibling::*//label[1]/input")
     private WebElement priceFromInput;
@@ -51,7 +49,6 @@ public class MobilePhonePage extends BasePage {
         priceToInput.sendKeys(Keys.DELETE);
         priceToInput.sendKeys("10123");
         return this;
-
     }
 
     public MobilePhonePage clickOnAndroidCheckBox(){
@@ -67,6 +64,7 @@ public class MobilePhonePage extends BasePage {
         maxReview = Collections.max(numbers);
         return maxReview;
     }
+
     public MobilePhonePage clickOnMaxReviewPhone(){
         getMaxReviewPhone().click();
         return this;
@@ -77,6 +75,5 @@ public class MobilePhonePage extends BasePage {
         WebElement maxReviewPhone = driver.findElement(By.xpath(maxReviewPhoneXPath));
         return maxReviewPhone;
     }
-
 
 }

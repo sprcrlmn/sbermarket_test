@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import web.page.MainPage;
 
 import java.time.Duration;
 
@@ -22,10 +21,10 @@ public class BaseTest {
 
     }
 
-//    @AfterClass
-//    public void tearDown() {
-//        driver.close();
-//        driver.quit();
-//    }
+    @AfterClass
+    public void tearDown() {
+        driver.close();
+        driver.quit();
+    }
 
 }
