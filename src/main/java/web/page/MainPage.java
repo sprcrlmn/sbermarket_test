@@ -4,6 +4,7 @@ import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import web.core.BasePage;
 import org.openqa.selenium.interactions.Actions;
 
@@ -26,23 +27,26 @@ public class MainPage extends BasePage {
     @FindBy(className = "header-menu")
     private WebElement catalog;
 
+    @FindBy (xpath = "//a[@href='/catalog/elektronika/']")
+    private WebElement electronicaCatalog;
+
+    @FindBy (xpath = "//a[@href='/catalog/mobilnye-telefony-i-aksessuary/']")
+    private WebElement mobilePhoneAndAccessoriesCatalog;
+
+    @FindBy (xpath = "//a[@href='/catalog/mobilnye-telefony/']")
+    private WebElement mobilePhoneCatalog;
+
     public MainPage clickOnCatalog(){
         catalog.click();
         return this;
     }
 
-    @FindBy (xpath = "//div[@class='header-catalog-menu-item__title'][contains(text(), 'Электроника')]")
-    private WebElement electronicaCatalog;
-
-    @FindBy (xpath = "//div[@class='header-catalog-menu-item__title'][contains(text(), 'Мобильные телефоны и аксессуары')]")
-    private WebElement mobilePhoneAndAccessoriesCatalog;
-
-    @FindBy (xpath = "//div[@class='header-catalog-menu-item__title'][normalize-space(text())='Мобильные телефоны']")
-    private WebElement mobilePhoneCatalog;
-
     public MainPage clickOnMobilePhoneCatalog(){
+        wait.until(ExpectedConditions.visibilityOf(electronicaCatalog));
         actions.moveToElement(electronicaCatalog).perform();
+        wait.until(ExpectedConditions.visibilityOf(mobilePhoneAndAccessoriesCatalog));
         actions.moveToElement(mobilePhoneAndAccessoriesCatalog).perform();
+        actions.moveToElement(mobilePhoneCatalog).perform();
         mobilePhoneCatalog.click();
         return this;
     }

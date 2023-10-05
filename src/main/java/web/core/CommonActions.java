@@ -17,6 +17,7 @@ public class CommonActions {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*", "ignore-certificate-errors");
+        options.addArguments("--disable-notifications");
         driver = new ChromeDriver(options);
         driver.manage().window().setSize(new Dimension(1240, 960));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(IMPLICIT_WAIT));
