@@ -24,7 +24,7 @@ public class MaxReviewPhonePage extends BasePage {
     }
     Actions actions = new Actions(driver);
 
-    @FindBy(xpath = "//div[@class = 'fixed-buy-button-block']/div/button")
+    @FindBy(xpath = "//div[@class = 'pdp-sales-block__button']")
     private WebElement buyButton;
 
 
