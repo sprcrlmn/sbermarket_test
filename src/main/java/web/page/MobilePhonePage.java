@@ -71,7 +71,7 @@ public class MobilePhonePage extends BasePage {
     }
 
     public WebElement getMaxReviewPhone(){
-        String maxReviewPhoneXPath = String.format("//div[@class='review-amount'][contains(text(), '721')]/../../../../../../..", maxReview());
+        String maxReviewPhoneXPath = String.format("//div[@class='review-amount'][contains(text(), '%s')]/../../../../../../..", maxReview());
         WebElement maxReviewPhone = driver.findElement(By.xpath(maxReviewPhoneXPath));
         return maxReviewPhone;
     }

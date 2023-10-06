@@ -1,6 +1,5 @@
-import org.openqa.selenium.Alert;
+
 import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 import web.core.BaseTest;
 import web.page.MainPage;
